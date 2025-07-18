@@ -17,3 +17,11 @@ def read_employees():
     return result
 
 employees = read_employees()
+
+
+# Task 3
+def column_index(column_name):
+    return employees["fields"].index(column_name)
+
+employee_id_column = column_index("employee_id")
+print(employee_id_column)
