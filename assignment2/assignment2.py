@@ -1,4 +1,6 @@
 import csv
+import os
+
 
 #Task  2
 def read_employees():
@@ -46,3 +48,30 @@ def sort_by_last_name():
     last_name_idx = column_index("last_name")
     employees["rows"].sort(key=lambda row: row[last_name_idx])
     return employees["rows"]
+
+
+# Task8
+def employee_dict(row):
+    return {
+        field: row[idx]
+        for idx, field in enumerate(employees["fields"])
+        if field != "employee_id"
+    }
+
+# Task 9
+def all_employees_dict():
+    return {
+        row[employee_id_column]: employee_dict(row)
+        for row in employees["rows"]
+    }
+
+# Task 10
+def get_this_value():
+    return os.getenv('THISVALUE')
+
+# Task 11
+import custom_module
+def set_that_secret(new_secret):
+    custom_module.set_secret(new_secret)
+
+print(custom_module.secret)
