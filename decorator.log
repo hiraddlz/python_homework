@@ -1,0 +1,15 @@
+function: print_hello
+positional parameters: none
+keyword parameters: none
+return: None
+==================================================
+function: check_true
+positional parameters: [1, 2, 3]
+keyword parameters: none
+return: True
+==================================================
+function: return_decorator
+positional parameters: none
+keyword parameters: {'a': 1, 'b': 2}
+return: <function logger_decorator at 0x0000020D457E3CE0>
+==================================================
