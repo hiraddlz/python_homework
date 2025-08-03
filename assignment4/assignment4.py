@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 ### task 1
 # Step 1
@@ -50,7 +51,7 @@ print(json_employees)
 
 # Step 3
 more_employees = pd.concat([task2_employees, json_employees], ignore_index=True)
-print("\nTask2 -Combined Employees:")
+print("\nTask2 - Combined Employees:")
 print(more_employees)
 
 
@@ -105,7 +106,7 @@ print("\nTask 4 - Cleaned Salary Column:")
 print(clean_data)
 
 # Step 6
-clean_data["Hire Date"] = pd.to_datetime(clean_data["Hire Date"], errors="coerce")
+clean_data["Hire Date"] = pd.to_datetime(clean_data["Hire Date"], errors="coerce", format="mixed")
 print("\nTask 4 - Cleaned Hire Dates:")
 print(clean_data)
 
