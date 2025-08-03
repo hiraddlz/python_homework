@@ -26,3 +26,29 @@ print(task1_older)
 # step4
 task1_older.to_csv('employees.csv', index=False)
 print("\nCSV file saved: employees.csv")
+
+
+## task 2
+# step 1
+task2_employees = pd.read_csv('employees.csv')
+print("\nTask 2 - Employees from CSV:")
+print(task2_employees)
+
+# Step 2
+json_data = """
+[
+    {"Name": "Eve", "Age": 28, "City": "Miami", "Salary": 60000},
+    {"Name": "Frank", "Age": 40, "City": "Seattle", "Salary": 95000}
+]
+"""
+with open('additional_employees.json', 'w') as f:
+    f.write(json_data)
+    
+json_employees = pd.read_json('additional_employees.json')
+print("\nTask 2 - JSON Employees:")
+print(json_employees)
+
+# Step 3
+more_employees = pd.concat([task2_employees, json_employees], ignore_index=True)
+print("\nTask2 -Combined Employees:")
+print(more_employees)
